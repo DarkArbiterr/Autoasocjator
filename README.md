@@ -39,3 +39,7 @@ Obrazy są wielkości 50x50, a każdy perceptron odpowiada za jeden piksel (łą
 * Zaktualizowane wartości bestTheta i bestWeights są przenoszone do odpowiednich tablic, a następnie zwracane jako wynik funkcji dla danego perceptronu.
 
 Proces ten powtarza się dla każdego perceptronu, co pozwala nauczyć perceptrony rozpoznawania wzorców na podstawie przykładów uczących. Uzyskane wagi są później używane do odszumiania obrazów podczas testowania perceptronów.
+
+![Autoasocjator](https://github.com/DarkArbiterr/Autoasocjator/assets/75552617/6a28ba87-1b7c-44e8-963b-7adf7eed3bae)
+
+
