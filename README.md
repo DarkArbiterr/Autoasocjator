@@ -25,10 +25,14 @@ Obrazy są wielkości 50x50, a każdy perceptron odpowiada za jeden piksel (łą
 
 ### Błąd (ERR) i dostosowywanie wag
 * Obliczenie błędu jako różnicy między pożądaną odpowiedzią O a wynikiem klasyfikacji.
-* Jeśli błąd jest różny od zera (klasyfikacja jest błędna), wagi są dostosowywane zgodnie z regułą perceptronową, gdzie **η** to współczynnik uczenia, **ERR** to błąd klasyfikacji, a **x** to wartość wejścia.:
-* > w = w + η * ERR * x
+* Jeśli błąd jest różny od zera (klasyfikacja jest błędna), wagi są dostosowywane zgodnie z regułą perceptronową, gdzie **η** to współczynnik uczenia, **ERR** to błąd klasyfikacji, a **x** to wartość wejścia:
+* >
+  > w = w + η * ERR * x
+  > 
 * Dodatkowo, wartość **theta** (progu) również jest dostosowywana:
-* > theta = theta + η * ERR
+* >
+  > theta = theta + η * ERR
+  > 
 
 ### Monitorowanie poprawności klasyfikacji
 * Jeśli błąd jest równy zeru, zwiększana jest zmienna *lifeTime*
@@ -46,7 +50,7 @@ Proces ten powtarza się dla każdego perceptronu, co pozwala nauczyć perceptro
 * Jeśli suma jest większa lub równa *thecie*, ustawiana jest wartość wyjściowa obrazu na 1 (czarny pixel).
 
 ## Działanie programu
-Program uruchamia **okno terminala** i **okno apliakcji**. W terminalu widzimy proces uczenia (wypisywanie obecnie uczonego perceptronu). Po procesie uczenia uruchamia się aplikacja. Poniżej wizualizacja jak działa aplikacja:
+Program uruchamia **okno terminala** i **okno aplikacji**. W terminalu widzimy proces uczenia (wypisywanie obecnie uczonego perceptronu). Po procesie uczenia uruchamia się aplikacja. Poniżej wizualizacja jak działa aplikacja:
 
 ![Autoasocjator](https://github.com/DarkArbiterr/Autoasocjator/assets/75552617/6a28ba87-1b7c-44e8-963b-7adf7eed3bae)
 
