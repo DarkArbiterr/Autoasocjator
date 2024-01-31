@@ -3,10 +3,8 @@
 ## Opis Programu
 Program umożliwia zaszumianie a następnie odszumianie jednego z 7 wgranych obrazów. Odszumianie możemy wielokrotnie powtarzać, aż uzyskamy zadowalający rezultat. Program powstał przy użyciu **perceptronów prostych** i **prostego modelu uczenia perceptronów**
 
-Obrazy są wielkości 50x50, a każdy perceptron odpowiada za jeden piksel (łącznie 2500 perceptronów).
-
 > [!NOTE]
-> Useful information that users should know, even when skimming content.
+> Obrazy są wielkości 50x50, a każdy perceptron odpowiada za jeden piksel (łącznie 2500 perceptronów).
 
 ## Proces Uczenia Perceptronu
 ### Inicjalizacja zmiennych i wag
