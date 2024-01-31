@@ -7,10 +7,10 @@ Obrazy są wielkości 50x50, a każdy perceptron odpowiada za jeden piksel (łą
 
 ## Proces Uczenia Perceptronu
 ### Inicjalizacja zmiennych i wag
-* Inicjalizacja wag perceptronu losowymi wartościami z zakresu **[-0.01, 0.01]**.
-* Inicjalizacja wartości *theta* (progu) perceptronu również losową wartością z zakresu **[-0.01, 0.01]**.
-* Ustalenie stałej uczenia *learningEta* na wartość **0.1.**
-* Inicjalizacja zmiennych pomocniczych, takich jak *lifeTime* (ilość iteracji bez błędu), *bestLifeTime* (najlepsza ilość iteracji bez błędu), *bestTheta* (najlepsza wartość theta), *bestWeights* (najlepsze wagi).
+    * Inicjalizacja wag perceptronu losowymi wartościami z zakresu **[-0.01, 0.01]**.
+    * Inicjalizacja wartości *theta* (progu) perceptronu również losową wartością z zakresu **[-0.01, 0.01]**.
+    * Ustalenie stałej uczenia *learningEta* na wartość **0.1.**
+    * Inicjalizacja zmiennych pomocniczych, takich jak *lifeTime* (ilość iteracji bez błędu), *bestLifeTime* (najlepsza ilość iteracji bez błędu), *bestTheta* (najlepsza wartość theta), *bestWeights* (najlepsze wagi).
 
 ### Losowy wybór przykładu uczącego
 * W pętli głównej (1000 iteracji) losowany jest indeks przykładu uczącego z listy *examples*.
