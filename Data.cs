@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Drawing;
 using System.IO;
+using System.Reflection;
 
 namespace Autoasocjator
 {
@@ -23,46 +24,70 @@ namespace Autoasocjator
         public List<Data> LoadData()
         {
             List<Data> data = new List<Data>();
-            double[] array1 = LoadImage(@"D:\Autoasocjator\Assets\1.png");
-            data.Add(new Data(array1));
-            double[] array2 = LoadImage(@"D:\Autoasocjator\Assets\2.png");
-            data.Add(new Data(array2));
-            double[] array3 = LoadImage(@"D:\Autoasocjator\Assets\3.png");
-            data.Add(new Data(array3));
-            double[] array4 = LoadImage(@"D:\Autoasocjator\Assets\4.png");
-            data.Add(new Data(array4));
-            double[] array5 = LoadImage(@"D:\Autoasocjator\Assets\5.png");
-            data.Add(new Data(array5));
-            double[] array6 = LoadImage(@"D:\Autoasocjator\Assets\6.png");
-            data.Add(new Data(array6));
-            double[] array7 = LoadImage(@"D:\Autoasocjator\Assets\7.png");
-            data.Add(new Data(array7));
+
+            // Pobieranie ścieżki do katalogu projektu
+            string projectDirectory = LoadProjectPath();
+
+            // Łączenie ścieżki do katalogu projektu z nazwami plików
+            string[] fileNames = { "1.png", "2.png", "3.png", "4.png", "5.png", "6.png", "7.png" };
+            foreach (string fileName in fileNames)
+            {
+                string filePath = Path.Combine(projectDirectory, "Assets", fileName);
+                double[] imageData = LoadImage(filePath);
+                data.Add(new Data(imageData));
+            }
 
             return data;
+        }
+
+        public string LoadProjectPath()
+        {
+            string path = Path.GetFullPath(Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "..", "..", ".."));
+
+            return path;
         }
 
         public double[] LoadImage(string path)
         {
             double[] array = new double[2500];
-            int k = 0;
-            Bitmap img = new Bitmap(path);
-            for (int i = 0; i < img.Width; i++)
+
+            try
             {
-                for (int j = 0; j < img.Height; j++)
+                if (File.Exists(path))
                 {
-                    Color pixel = img.GetPixel(i, j);
-                    if (pixel.R < 128 && pixel.G < 128 && pixel.B < 128)
+                    using (Bitmap img = new Bitmap(path))
                     {
-                        array[k] = 1;
-                        k++;
-                    }
-                    else
-                    {
-                        array[k] = 0;
-                        k++;
+                        int k = 0;
+                        for (int i = 0; i < img.Width; i++)
+                        {
+                            for (int j = 0; j < img.Height; j++)
+                            {
+                                Color pixel = img.GetPixel(i, j);
+                                if (pixel.R < 128 && pixel.G < 128 && pixel.B < 128)
+                                {
+                                    array[k] = 1;
+                                    k++;
+                                }
+                                else
+                                {
+                                    array[k] = 0;
+                                    k++;
+                                }
+                            }
+                        }
                     }
                 }
+                else
+                {
+                    Console.WriteLine($"Plik obrazu o ścieżce '{path}' nie istnieje.");
+                }
             }
+            catch (Exception ex)
+            {
+                // Obsługa błędu, np. wypisanie komunikatu lub zalogowanie go
+                Console.WriteLine($"Błąd podczas wczytywania obrazu: {ex.Message}");
+            }
+
             return array;
         }
     }

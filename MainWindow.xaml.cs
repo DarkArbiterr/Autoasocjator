@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Drawing;
 using System.IO;
+using System.Reflection;
 
 namespace Autoasocjator
 {
@@ -116,9 +117,11 @@ namespace Autoasocjator
 
         private void combobox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            string s = (combobox.SelectedIndex + 1).ToString();
-            DisplayInputImage(@"D:\Autoasocjator\Assets\" + s + ".png");
-            inputImage = data.LoadImage(@"D:\Autoasocjator\Assets\" + s + ".png");
+            string projectFolderPath = data.LoadProjectPath();
+            string s = (combobox.SelectedIndex + 1).ToString() + ".png";
+            string imagePath = System.IO.Path.Combine(projectFolderPath, "Assets", s);
+            DisplayInputImage(imagePath);
+            inputImage = data.LoadImage(imagePath);
         }
 
         public void DisplayInputImage(string s)
@@ -221,5 +224,7 @@ namespace Autoasocjator
             inputImage = outputImage;
             DisplayNoisedImage();
         }
+
+
     }
 }
