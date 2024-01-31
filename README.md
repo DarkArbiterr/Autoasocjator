@@ -26,13 +26,13 @@ Obrazy są wielkości 50x50, a każdy perceptron odpowiada za jeden piksel (łą
 ### Błąd (ERR) i dostosowywanie wag
 * Obliczenie błędu jako różnicy między pożądaną odpowiedzią O a wynikiem klasyfikacji.
 * Jeśli błąd jest różny od zera (klasyfikacja jest błędna), wagi są dostosowywane zgodnie z regułą perceptronową, gdzie **η** to współczynnik uczenia, **ERR** to błąd klasyfikacji, a **x** to wartość wejścia:
-* >
-  > w = w + η * ERR * x
-  > 
+* ```
+  w = w + η * ERR * x
+  ```
 * Dodatkowo, wartość **theta** (progu) również jest dostosowywana:
-* >
-  > theta = theta + η * ERR
-  > 
+* ```
+  theta = theta + η * ERR
+  ```
 
 ### Monitorowanie poprawności klasyfikacji
 * Jeśli błąd jest równy zeru, zwiększana jest zmienna *lifeTime*
