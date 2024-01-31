@@ -5,6 +5,9 @@ Program umożliwia zaszumianie a następnie odszumianie jednego z 7 wgranych obr
 
 Obrazy są wielkości 50x50, a każdy perceptron odpowiada za jeden piksel (łącznie 2500 perceptronów).
 
+> [!NOTE]
+> Useful information that users should know, even when skimming content.
+
 ## Proces Uczenia Perceptronu
 ### Inicjalizacja zmiennych i wag
 * Inicjalizacja wag perceptronu losowymi wartościami z zakresu **[-0.01, 0.01]**.
